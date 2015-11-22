@@ -1,21 +1,21 @@
 var deprecatedHeaders = [
-	'connection',
-	'host',
-	'keep-alive',
-	'proxy-connection',
-	'te',
-	'transfer-encoding',
-	'upgrade'
+  'connection',
+  'host',
+  'keep-alive',
+  'proxy-connection',
+  'te',
+  'transfer-encoding',
+  'upgrade'
 ];
 
 function removeDeprecatedHeaders(headers) {
-	headers._host = headers.host;
+  headers._host = headers.host;
 
-	deprecatedHeaders.map(function(name) {
-		delete headers[name];
-	});
+  deprecatedHeaders.map(function(name) {
+    delete headers[name];
+  });
 
-	return headers;
+  return headers;
 }
 
 exports.removeDeprecatedHeaders = removeDeprecatedHeaders;
