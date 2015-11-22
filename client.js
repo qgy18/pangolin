@@ -1,6 +1,6 @@
 /*** config start ***/
 var REMOTE_HOST = '127.0.0.1';  //Server 端 IP
-var REMOTE_PORT = 10001;        //Server 端 Socket Server 端口，即上面的 SOCK_PORT
+var REMOTE_PORT = 10001;        //Server 端 TCP Server 端口，即上面的 TCP_PORT
 
 var LOCAL_HOST  = '127.0.0.1';  //本地 WEB 应用所在 IP，一般不需要修改
 var LOCAL_PORT  = 9999;         //本地 WEB 应用所在端口
@@ -48,7 +48,7 @@ client.connect(REMOTE_PORT, REMOTE_HOST, function() {
       var ua = req.headers['user-agent'];
       var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
       var realIp = req.headers['x-real-ip'];
-      
+
       console.log(format('[%s] "%s %s" %s - %s', time, req.method, u.path, ua, realIp));
     }
     

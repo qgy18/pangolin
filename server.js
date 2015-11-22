@@ -1,5 +1,5 @@
 /*** config start ***/
-var SOCK_PORT = 10001;          //Socket Server 端口
+var TCP_PORT  = 10001;          //TCP Server 端口
 var HTTP_PORT = 10000;          //HTTP Server 端口，浏览器访问时用这个端口
 /*** config end ***/
 
@@ -46,7 +46,7 @@ function createHTTPServer(remoteSock, httpServerID) {
   return server;
 }
 
-function createSockServer() {
+function createTCPServer() {
   var httpServerID = 0;
 
   var server = net.createServer(function(sock) {
@@ -60,9 +60,9 @@ function createSockServer() {
     console.log('Client connected...');
   });
 
-  server.listen(SOCK_PORT, '0.0.0.0', function() {
-    console.log('SOCKServer is running at port', SOCK_PORT, '...');
+  server.listen(TCP_PORT, '0.0.0.0', function() {
+    console.log('TCPServer is running at port', TCP_PORT, '...');
   });
 }
 
-createSockServer();
+createTCPServer();
