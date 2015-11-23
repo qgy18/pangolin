@@ -1,8 +1,8 @@
 # 说明
 
-pangolin，中文意思是「穿山甲]。
+pangolin，中文意思是「穿山甲]，名字来自于同事的类似项目，在此表示感谢！
 
-这是我为了验证一个想法，用几十行 Node.js 代码实现的一个公网到内网的 HTTP/1.1 代理。这是用来测试的实验品，**并不推荐实际使用**。如果有类似需求，可以使用 [ngrok](https://github.com/inconshreveable/ngrok/) 这个项目，我之前写的介绍：[搭建 ngrok 服务实现内网穿透](https://imququ.com/post/self-hosted-ngrokd.html)。
+这是我为了验证一个想法，用几十行 Node.js 代码实现的一个公网到内网的 HTTP/1.1 代理，pangolin 服务端与客户端之间基于 HTTP/2 协议传输。这是用来测试的实验品，**并不推荐实际使用**。如果有类似需求，可以使用 [ngrok](https://github.com/inconshreveable/ngrok/) 这个项目，我之前写的介绍：[搭建 ngrok 服务实现内网穿透](https://imququ.com/post/self-hosted-ngrokd.html)。
 
 ## 简单原理
 
