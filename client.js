@@ -67,6 +67,10 @@ client.connect(REMOTE_PORT, REMOTE_HOST, function() {
   });
 });
 
+client.on('error', function(e) {
+  console.log('Can not connect remote server! ' + e.errno);
+});
+
 client.on('close', function() {
   console.log('Remote server shutdown!');
   process.exit(0);

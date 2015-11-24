@@ -63,6 +63,10 @@ function createTCPServer() {
   server.listen(TCP_PORT, '0.0.0.0', function() {
     console.log('TCPServer is running at port', TCP_PORT, '...');
   });
+
+  server.on('error', function(e) {
+    console.log('Can not start server! ' + e.errno);
+  });
 }
 
 createTCPServer();
