@@ -14,7 +14,7 @@ pangolin，中文意思是「穿山甲]，名字来自于同事的类似项目�
 
 HTTP/2 的 Server 和 Client 直接用的 [node-http2](https://github.com/molnarg/node-http2) 模块。但我做了一些修改，使之可以基于已有 socket 创建 HTTP Server 和发送 HTTP Request。
 
-我用了 node-http2 的 h2c（HTTP2 cleartext），所以公网客户端和内网客户端之间的传输是明文，当然由于是 HTTP/2，流量是以二进制 frame 传输的。要加上 TLS 也简单，但现在这样测试更方便。
+我用了 node-http2 的 h2c（HTTP2 cleartext），所以公网服务端和内网客户端之间的传输是明文，当然由于是 HTTP/2，流量是以二进制 frame 传输的。要加上 TLS 也简单，但现在这样测试更方便。
 
 ## 测试说明
 
