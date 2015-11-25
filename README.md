@@ -10,7 +10,7 @@ pangolin，中文意思是「穿山甲]，名字来自于同事的类似项目�
 
 **浏览器** <-------HTTP/1.1-------> **公网客户端** <-------HTTP/2-------> **内网客户端** <-------HTTP/1.1-------> **内网 WEB 应用**
 
-可以看到，公网或其它内网中的浏览器没办法直接访问内网 WEB 应用。我通过运行在公网上的客户端开启一个 TCP Server，让内网客户端去连，再基于这条 socket 连接，在内网创建了一个 HTTP Server 用来转发请求。
+可以看到，公网或其它内网中的浏览器没办法直接访问内网 WEB 应用。我通过运行在公网上的服务端开启一个 TCP Server，让内网客户端去连，再基于这条 socket 连接，在内网创建了一个 HTTP/2 Server 用来转发请求。
 
 HTTP/2 的 Server 和 Client 直接用的 [node-http2](https://github.com/molnarg/node-http2) 模块。但我做了一些修改，使之可以基于已有 socket 创建 HTTP Server 和发送 HTTP Request。
 
