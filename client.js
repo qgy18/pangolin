@@ -15,6 +15,8 @@ var http2 = require('./node-http2');
 var removeDeprecatedHeaders = require('./header').removeDeprecatedHeaders;
 var format = require('util').format;
 
+var formatDate = function(e) {function t(e){return("0"+e).slice(-2)}var n=e.getFullYear()+"-"+t(e.getMonth()+1)+"-"+t(e.getDate()),r=t(e.getHours())+":"+t(e.getMinutes())+":"+t(e.getSeconds());return n+" "+r};
+
 var client = new net.Socket();
 client.setKeepAlive(true);
 
@@ -46,10 +48,9 @@ client.connect(REMOTE_PORT, REMOTE_HOST, function() {
     if(SHOW_ACCESS_LOG) {
       var d = new Date;
       var ua = req.headers['user-agent'];
-      var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
       var realIp = req.headers['x-real-ip'];
 
-      console.log(format('[%s] "%s %s" %s - %s', time, req.method, u.path, ua, realIp));
+      console.log(format('[%s] - %s "%s %s" %s', formatDate(d), realIp, req.method, u.path, ua));
     }
     
     var pReq = http.request(options, function(pRes) {
