@@ -1,0 +1,38 @@
+{
+  "name": "pangolin",
+  "version": "1.0.5",
+  "description": "Introspected tunnels to localhost HTTP/1.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/index.js server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qgy18/pangolin.git"
+  },
+  "dependencies": {
+    "node-mixin": "*",
+    "commander": "~2.9.0"
+  },
+  "bin": {
+    "pangolin": "./bin/index.js"
+  },
+  "author": {
+    "name": "qgy18",
+    "email": "quguangyu@gmail.com"
+  },
+  "contributors": [{
+    "name": "qgy18",
+    "email": "quguangyu@gmail.com"
+  },
+  {
+    "name": "akira-cn",
+    "email": "akira.cn@gmail.com"
+  }],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qgy18/pangolin/issues"
+  },
+  "homepage": "https://github.com/qgy18/pangolin#readme"
+}
