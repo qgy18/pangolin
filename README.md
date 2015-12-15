@@ -10,9 +10,9 @@ HTTP/1.1 requests are transmitted to local by HTTP/2 proxy.
 
 **Web browser** <-------HTTP/1.1-------> **Public endpoint** <-------HTTP/2-------> **Local server** <-------HTTP/1.1-------> **Local web app**
 
-We can see that the public or other network browser can not directly access the WEB network application. I open a TCP Server by running in the public service, let the network client to connected by socket, and then based on the connection in the network has created, a HTTP/2 Server can be used to forward each http requests.
+We can see that the public or other network's browsers can not  access the local network application directly. I open a TCP Server by running in the public network, let the network client to connected by socket, and then based on the connection in the network was created, a HTTP/2 Server can be used to forward each http requests.
 
-I created both HTTP/2 server and client based on [node-http2](https://github.com/molnarg/node-http2) while I make a little change to make it can use a specified socket instance to create server and send requests.
+I created both HTTP/2 server and client based on [node-http2](https://github.com/molnarg/node-http2) while I make a little change to make it use a specified socket instance to create server and send requests.
 
 I use h2c (HTTP2 cleartext), so the transmit data from public to local are sent in the clear, the data format is binary because of HTTP/2. It is also quite easy to add TSL, but I didn't do it for a convenient testing.
 
