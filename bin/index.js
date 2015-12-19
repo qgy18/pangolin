@@ -36,11 +36,13 @@ program
   .command('server')
   .description('start pangolin server')
   .option('-p, --port <port>', 'port of the tcp connection', parseInt)
-  .option('-c, --connections <count>', 'max number of http connections', parseInt)  
+  .option('-c, --connections <count>', 'max number of http connections', parseInt)
+  .option('-t, --timeout <timeout>', 'timeout of the TCP connections', parseInt)  
   .action(function(){
     server({
       port: (0|this.port) || 10000,
-      httpConnects: (0|this.connections) || 99
+      httpConnects: (0|this.connections) || 99,
+      timeout: this.timeout || 7200
     });
   });
 

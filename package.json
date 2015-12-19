@@ -1,6 +1,6 @@
 {
   "name": "pangolin",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Introspected tunnels to localhost HTTP/1.1",
   "main": "index.js",
   "scripts": {
