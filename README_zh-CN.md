@@ -35,7 +35,9 @@ pangolin server -p 10000  #启动服务，TCP端口为10000
 * 本地
 
 ```bash
-pangolin client -r 远程http服务器IP地址:端口号 -l 本地http端口号
+pangolin client -r 远程HTTP地址或域名:端口号 -l 本地HTTP端口号
+或
+pangolin client -r 远程HTTP地址或域名:端口号 -l 本地HTTP地址或域名:端口号
 ```
 
 ### Node.js API

@@ -50,7 +50,7 @@ program
   .command('client')
   .description('start pangolin client')
   .option('-r, --remote <addr:port>', 'the ip address of remote tcp server')
-  .option('-l, --local <port>', 'port of the local http server')
+  .option('-l, --local <addr:port>', 'port of the local http server')
   .option('-q, --queit', 'ignore access logs')
   .action(function(){
     var remoteHost = ['127.0.0.1', 10000];
@@ -59,10 +59,21 @@ program
       remoteHost = this.remote.split(':');
     }
 
+    var localHost = ['127.0.0.1', 80];
+
+    if(this.local) {
+      if(/^\d+$/.test(this.local)) {
+        localHost[1] = this.local;
+      } else {
+        localHost = this.local.split(':');
+      }
+    }
+
     client({
       remoteHost : remoteHost[0] || '127.0.0.1',
       remotePort :  remoteHost[1] || 10000,
-      localPort: this.local || 80,
+      localHost : localHost[0] || '127.0.0.1',
+      localPort : localHost[1] || 80,
       showAccessLog: !this.queit
     });    
   });

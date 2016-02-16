@@ -35,7 +35,9 @@ pangolin server -p 10000  #Start to listen，TCP port 10000
 * Local
 
 ```bash
-pangolin client -r <public ip>:<port> -l <local http port>
+pangolin client -r <public ip/domain>:<port> -l <port>
+or
+pangolin client -r <public ip/domain>:<port> -l <local ip/domain>:<port>
 ```
 
 ### Node.js API
