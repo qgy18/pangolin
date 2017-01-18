@@ -44,7 +44,7 @@ program
       port: (0|this.port) || 10000,
       httpConnects: (0|this.connections) || 99,
       timeout: this.timeout || 7200,
-      localPort: this.localport || 80,
+      localport: this.localport || 80,
     });
   });
 
