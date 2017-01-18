@@ -18,7 +18,7 @@ function getVersion(){
 
 function displayVersion(){
   var version = getVersion();
-  console.log('\npangolin v' + version + '\n');  
+  console.log('\npangolin v' + version + '\n');
 }
 
 var program = require('commander');
@@ -37,12 +37,14 @@ program
   .description('start pangolin server')
   .option('-p, --port <port>', 'port of the tcp connection', parseInt)
   .option('-c, --connections <count>', 'max number of http connections', parseInt)
-  .option('-t, --timeout <timeout>', 'timeout of the TCP connections', parseInt)  
+  .option('-t, --timeout <timeout>', 'timeout of the TCP connections', parseInt)
+  .option('-l, --localport <localport>', 'port of listening ', parseInt)
   .action(function(){
     server({
       port: (0|this.port) || 10000,
       httpConnects: (0|this.connections) || 99,
-      timeout: this.timeout || 7200
+      timeout: this.timeout || 7200,
+      localPort: this.localport || 80,
     });
   });
 
@@ -75,7 +77,7 @@ program
       localHost : localHost[0] || '127.0.0.1',
       localPort : localHost[1] || 80,
       showAccessLog: !this.queit
-    });    
+    });
   });
 
 var args = process.argv;
@@ -83,4 +85,4 @@ if(args.length <= 2){
   args[2] = '-h';
 }
 
-program.parse(args);  
+program.parse(args);
